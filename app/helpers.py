@@ -34,8 +34,6 @@ class CourseSpider(scrapy.Spider):
     def parse(self, response):
         uni = str(config["login"]["uni"])
         password = str(config["login"]["password"])
-        # uni="ytm2102"
-        # password="Breadedteasandchocolate4!"
         if uni is None or password is None:
             raise Exception('you must give a uni and password')
         return [scrapy.FormRequest.from_response
